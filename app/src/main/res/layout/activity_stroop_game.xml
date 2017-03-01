@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnYellow"
             android:elevation="0dp"
-            android:background="@android:color/holo_orange_light" />
+            android:background="@android:color/holo_orange_light"
+            android:onClick='stroopGuess ("Yellow")' />
 
         <Button
             android:text="GREEN"

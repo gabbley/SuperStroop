@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 public class StroopGame extends AppCompatActivity {
 
+    //fields
+    public static String stroopGuess = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +20,12 @@ public class StroopGame extends AppCompatActivity {
 
 
 
+    }
 
-
-
-
+    public void setStroop(String color){
+        stroopGuess = color;
+        TextView word = (TextView) findViewById(R.id.lblScore);
+        word.setText(stroopGuess);
     }
 
 
