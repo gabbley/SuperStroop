@@ -121,18 +121,18 @@
             android:background="@android:color/background_dark" />
 
         <Button
-            android:text="Orange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnOrange"
-            android:background="@android:color/holo_orange_dark" />
-
-        <Button
             android:text="Pink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnPink"
             android:background="@color/colorAccent" />
+
+        <Button
+            android:text="Orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnOrange"
+            android:background="@android:color/holo_orange_dark" />
     </GridLayout>
 
 </RelativeLayout>

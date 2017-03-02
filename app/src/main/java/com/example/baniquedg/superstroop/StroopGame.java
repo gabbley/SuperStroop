@@ -8,11 +8,16 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class StroopGame extends AppCompatActivity {
 
     //fields
     public static String stroopGuess = "";
-    public static int whichColor = 0;
+    public static String stroopCompare = "";
+    public static Button currentClick;
+    public static int[] colorArray;
+    public static int score = 0;
     public TextView mainWord = (TextView) findViewById(R.id.lblWord);
 
     @Override
@@ -20,47 +25,95 @@ public class StroopGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stroop_game);
 
-
+        checkErr(); //checks if the colors are not working
 
     }
+
 
     public void setStroop(View view){
-        stroopGuess = stroopWordColor();
+        stroopWordColor();
+        whichButtonClicked(view); //check this parameter
+        if (stroopGuess.equals(currentClick.getText().toString())) {
+            score++;
+            changeWord();
+        }
     }
 
-/*    public String chooseColor(){
-        String color;
+    public void changeWord(){
+        //word changes upon every correct click of a button
+        mainWord.setTextColor(randColor());
+    }
 
-        switch (whichColor){
-            case 1: color = "yellow";
-                break;
-            case 2: color = "green";
-                break;
-            case 3: color = "red";
-                break;
-            case 4: color = "blue";
-                break;
-            case 5: color = "purple";
-                break;
-            case 6: color = "black";
-                break;
-            case 7: color = "orange";
-                break;
-            case 8: color = "pink";
-                break;
-            default: color = "n/a";
-                break;
-        }
+    //returns a random color to set word to
+    public int randColor(){
 
-        return color;
-    }*/
+        colorArray = new int[] {Color.YELLOW, Color.GREEN,
+                Color.RED, Color.BLUE, Color.MAGENTA};
+
+        return colorArray[(int)Math.random() * colorArray.length ];
+    }
+
+ public void viewScore(){
+     TextView scoreView = (TextView) findViewById(R.id.lblScore);
+     String s = ""+ score;
+     char[] c = new char[s.length()];
+     for (int i = 0; i<s.length(); i++){
+         c[i] = s.charAt(i);
+     }
+     scoreView.setText(c, 0, s.length());
+ }
+
+    //button.getText().toString() compare this to color called below
 
     public String stroopWordColor(){
-        if (mainWord.getCurrentTextColor() == Color.YELLOW){
-            whichColor = 0;
+        switch (mainWord.getCurrentTextColor()){
+            case Color.YELLOW : stroopGuess = "yellow";
+                break;
+            case Color.GREEN : stroopGuess = "green";
+                break;
+            case Color.RED : stroopGuess = "red";
+                break;
+            case Color.BLUE : stroopGuess = "blue";
+                break;
+          //  case Color.VERY_DARK_MAGENTA : color = "purple";
+            case Color.BLACK : stroopGuess = "black";
+                break;
+               // case Color.ORA
+            case Color.MAGENTA: stroopGuess = "pink";
+                break;
+            default : stroopGuess = "no color";
         }
 
     }
 
+
+
+    public void whichButtonClicked(View view) {
+            switch (view.getId()) {
+                case R.id.btnYellow: stroopCompare = "yellow";
+                    break;
+                case R.id.btnGreen: stroopCompare = "blue";
+                    break;
+                case R.id.btnRed : stroopCompare = "red";
+                    break;
+                case R.id.btnBlue : stroopCompare = "blue";
+                    break;
+                case R.id.btnPurple : stroopCompare = "purple";
+                    break;
+                case R.id.btnBlack : stroopCompare = "black";
+                    break;
+                case R.id.btnOrange : stroopCompare = "orange";
+                    break;
+                case R.id.btnPink : stroopCompare = "pink";
+                    break;
+                default: stroopCompare = "no color";
+            }
+        }
+
+    public void checkErr(){
+        if (stroopCompare.equals("no color") || stroopGuess.equals("no color")){
+            //error message in dialog box
+        }
+    }
 
 }
