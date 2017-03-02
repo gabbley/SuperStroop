@@ -32,21 +32,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnGreen"
-            android:background="@android:color/holo_green_dark" />
+            android:background="@android:color/holo_green_dark"
+            android:onClick="setStroop" />
 
         <Button
             android:text="RED"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnRed"
-            android:background="@android:color/holo_red_dark" />
+            android:background="@android:color/holo_red_dark"
+            android:onClick="setStroop" />
 
         <Button
             android:text="BLUE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnBlue"
-            android:background="@android:color/holo_blue_dark" />
+            android:background="@android:color/holo_blue_dark"
+            android:onClick="setStroop" />
+
+        <Button
+            android:text="RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:background="@android:color/holo_red_dark"
+            android:onClick="setStroop" />
+
+        <Button
+            android:text="RED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:background="@android:color/holo_red_dark"
+            android:onClick="setStroop" />
     </GridLayout>
 
     <LinearLayout
@@ -110,7 +129,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnPurple"
-            android:background="@android:color/holo_purple" />
+            android:background="@android:color/holo_purple"
+            android:onClick="setStroop" />
 
         <Button
             android:text="Black"
@@ -118,21 +138,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnBlack"
             android:textColor="@android:color/background_light"
-            android:background="@android:color/background_dark" />
+            android:background="@android:color/background_dark"
+            android:onClick="setStroop" />
 
         <Button
             android:text="Pink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnPink"
-            android:background="@color/colorAccent" />
+            android:background="@color/colorAccent"
+            android:onClick="setStroop" />
 
         <Button
             android:text="Orange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnOrange"
-            android:background="@android:color/holo_orange_dark" />
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="setStroop" />
     </GridLayout>
 
 </RelativeLayout>

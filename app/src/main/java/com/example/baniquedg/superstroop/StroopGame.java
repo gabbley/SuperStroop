@@ -8,32 +8,32 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class StroopGame extends AppCompatActivity {
 
     //fields
-    public static String stroopGuess = "";
-    public static String stroopCompare = "";
+    public static String stroopGuess;
+    public static String stroopCompare;
     public static Button currentClick;
     public static int[] colorArray;
-    public static int score = 0;
-    public TextView mainWord = (TextView) findViewById(R.id.lblWord);
+    public static int score;
+    public TextView mainWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stroop_game);
+        mainWord = (TextView) findViewById(R.id.lblWord);
 
         checkErr(); //checks if the colors are not working
 
     }
 
 
+
     public void setStroop(View view){
         stroopWordColor();
         whichButtonClicked(view); //check this parameter
-        if (stroopGuess.equals(currentClick.getText().toString())) {
+        if (stroopGuess.equals(stroopCompare)) {
             score++;
             changeWord();
         }
@@ -65,7 +65,7 @@ public class StroopGame extends AppCompatActivity {
 
     //button.getText().toString() compare this to color called below
 
-    public String stroopWordColor(){
+    public void stroopWordColor(){
         switch (mainWord.getCurrentTextColor()){
             case Color.YELLOW : stroopGuess = "yellow";
                 break;
@@ -83,9 +83,7 @@ public class StroopGame extends AppCompatActivity {
                 break;
             default : stroopGuess = "no color";
         }
-
     }
-
 
 
     public void whichButtonClicked(View view) {
