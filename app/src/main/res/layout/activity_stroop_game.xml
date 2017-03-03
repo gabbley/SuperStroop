@@ -10,13 +10,129 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.baniquedg.superstroop.StroopGame">
 
+    <TextView
+        android:text="WORD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblWord"
+        android:textSize="50sp"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="113dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUPER STROOPER"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/lblTitle"
+            android:fontFamily="serif-monospace"
+            android:textSize="30sp"
+            android:textStyle="normal|bold" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="SCORE:"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblScoreTitle" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblScore"
+                android:layout_below="@+id/linearLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="TIMER:"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblTimerTitle"
+                android:textStyle="normal|italic" />
+
+            <TextView
+                android:text="0:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblTimer"
+                android:layout_weight="1.21" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/hardButtonsGrid"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="58dp">
+        android:layout_marginBottom="46dp">
+
+        <Button
+            android:text="PURPLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnPurple"
+            android:background="@android:color/holo_purple"
+            android:onClick="setStroop" />
+
+        <Button
+            android:text="Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBlack"
+            android:textColor="@android:color/background_light"
+            android:background="@android:color/background_dark"
+            android:onClick="setStroop" />
+
+        <Button
+            android:text="Pink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnPink"
+            android:background="@color/colorAccent"
+            android:onClick="setStroop" />
+
+        <Button
+            android:text="Orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnOrange"
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="setStroop" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hardButtonsGrid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:text="YELLOW"
@@ -51,111 +167,23 @@
             android:background="@android:color/holo_blue_dark"
             android:onClick="setStroop" />
 
-        <Button
-            android:text="RED"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2"
-            android:background="@android:color/holo_red_dark"
-            android:onClick="setStroop" />
-
-        <Button
-            android:text="RED"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            android:background="@android:color/holo_red_dark"
-            android:onClick="setStroop" />
     </GridLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SUPER STROOPER"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/lblTitle"
-            android:fontFamily="serif-monospace"
-            android:textSize="30sp"
-            android:textStyle="normal|bold" />
-
-        <TextView
-            android:text="SCORE:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblScore"
-            android:fontFamily="monospace"
-            android:layout_below="@+id/linearLayout"
-            android:layout_centerHorizontal="true"
-            android:textStyle="normal|italic" />
-
-        <TextView
-            android:text="TIMER:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView7"
-            android:textStyle="normal|italic" />
-    </LinearLayout>
-
-    <TextView
-        android:text="WORD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblWord"
-        android:textSize="50sp"
-        android:fontFamily="serif-monospace"
-        android:layout_marginTop="113dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:textStyle="normal|bold" />
-
     <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/hardButtonsGrid">
+        android:layout_alignParentStart="true">
 
         <Button
-            android:text="PURPLE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnPurple"
-            android:background="@android:color/holo_purple"
-            android:onClick="setStroop" />
-
-        <Button
-            android:text="Black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnBlack"
-            android:textColor="@android:color/background_light"
-            android:background="@android:color/background_dark"
-            android:onClick="setStroop" />
-
-        <Button
-            android:text="Pink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnPink"
-            android:background="@color/colorAccent"
-            android:onClick="setStroop" />
-
-        <Button
-            android:text="Orange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnOrange"
-            android:background="@android:color/holo_orange_dark"
-            android:onClick="setStroop" />
+            android:text="Reset"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:id="@+id/btnReset"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:onClick="resetScore" />
     </GridLayout>
 
 </RelativeLayout>

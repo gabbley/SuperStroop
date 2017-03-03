@@ -3,6 +3,7 @@ package com.example.baniquedg.superstroop;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -23,34 +24,29 @@ public class StroopGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stroop_game);
         mainWord = (TextView) findViewById(R.id.lblWord);
-
-        checkErr(); //checks if the colors are not working
+        mainWord.setTextColor(randColor());
+        score = 0;
+       // checkErr(); //checks if the colors are not working
 
     }
 
 
 
     public void setStroop(View view){
-        stroopWordColor();
-        whichButtonClicked(view); //check this parameter
-        if (stroopGuess.equals(stroopCompare)) {
-            score++;
-            changeWord();
+        stroopWordColor(); //identifies current mainWord color
+        whichButtonClicked(view); //identifies which button is chosen
+        if (stroopGuess.equals(stroopCompare)) { //compares the two answers
+            scoreUpdate(); //updates score accordingly
         }
-    }
-
-    public void changeWord(){
-        //word changes upon every correct click of a button
-        mainWord.setTextColor(randColor());
     }
 
     //returns a random color to set word to
     public int randColor(){
 
         colorArray = new int[] {Color.YELLOW, Color.GREEN,
-                Color.RED, Color.BLUE, Color.MAGENTA};
+                Color.RED, Color.BLUE, Color.MAGENTA, Color.BLACK};
 
-        return colorArray[(int)Math.random() * colorArray.length ];
+        return colorArray[(int)Math.random() * colorArray.length ]; //error, thinks length is zero
     }
 
  public void viewScore(){
@@ -114,4 +110,16 @@ public class StroopGame extends AppCompatActivity {
         }
     }
 
+    public void scoreUpdate(){
+        score++;
+        viewScore();
+        mainWord.setTextColor(randColor());
+
+    }
+
+    public void resetScore(View view){
+        score = -1;
+        scoreUpdate();
+
+    }
 }
