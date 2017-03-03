@@ -30,8 +30,6 @@ public class StroopGame extends AppCompatActivity {
 
     }
 
-
-
     public void setStroop(View view){
         stroopWordColor(); //identifies current mainWord color
         whichButtonClicked(view); //identifies which button is chosen
@@ -46,7 +44,7 @@ public class StroopGame extends AppCompatActivity {
         colorArray = new int[] {Color.YELLOW, Color.GREEN,
                 Color.RED, Color.BLUE, Color.MAGENTA, Color.BLACK};
 
-        return colorArray[(int)Math.random() * colorArray.length ]; //error, thinks length is zero
+        return colorArray[(int)(Math.random() * colorArray.length) ]; //error, thinks length is zero
     }
 
  public void viewScore(){
@@ -56,8 +54,21 @@ public class StroopGame extends AppCompatActivity {
      for (int i = 0; i<s.length(); i++){
          c[i] = s.charAt(i);
      }
-     scoreView.setText(c, 0, s.length());
+     scoreView.setText("" + 0);
+
+     //scoreView.setText(c, 0, s.length());
  }
+
+    public char[] setText(String s){
+        char[] c = new char[s.length()];
+
+        for (int i = 0; i<s.length(); i++){
+            c[i] = s.charAt(i);
+        }
+
+        return c;
+
+    }
 
     //button.getText().toString() compare this to color called below
 
@@ -86,7 +97,7 @@ public class StroopGame extends AppCompatActivity {
             switch (view.getId()) {
                 case R.id.btnYellow: stroopCompare = "yellow";
                     break;
-                case R.id.btnGreen: stroopCompare = "blue";
+                case R.id.btnGreen: stroopCompare = "green";
                     break;
                 case R.id.btnRed : stroopCompare = "red";
                     break;
@@ -104,6 +115,13 @@ public class StroopGame extends AppCompatActivity {
             }
         }
 
+    public String[] colorNameArray(){
+
+        String[] colorNames = new String[] {"yellow", "green", "blue", "orange",
+                "red", "purple", "pink", "black"};
+        return colorNames;
+    }
+
     public void checkErr(){
         if (stroopCompare.equals("no color") || stroopGuess.equals("no color")){
             //error message in dialog box
@@ -114,6 +132,7 @@ public class StroopGame extends AppCompatActivity {
         score++;
         viewScore();
         mainWord.setTextColor(randColor());
+        mainWord.setText("hahaha"); //override the method?
 
     }
 
