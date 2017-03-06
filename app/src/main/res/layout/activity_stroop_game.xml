@@ -30,14 +30,14 @@
         android:layout_centerHorizontal="true">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SUPER STROOPER"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:id="@+id/lblTitle"
             android:fontFamily="serif-monospace"
-            android:textSize="30sp"
+            android:textSize="39sp"
             android:textStyle="normal|bold" />
 
         <LinearLayout

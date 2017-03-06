@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class StroopGame extends AppCompatActivity {
 
     //fields
@@ -30,6 +32,8 @@ public class StroopGame extends AppCompatActivity {
         stroopWord = mainWord.getText().toString();
         score = 0;
        // checkErr(); //checks if the colors are not working
+        TextView gameTitle = (TextView) findViewById(R.id.lblTitle);
+        discoTitle(gameTitle);
 
     }
 
@@ -72,6 +76,30 @@ public class StroopGame extends AppCompatActivity {
 
         return c;
 
+    }
+
+    public void discoTitle(final TextView disco){
+        Thread t = new Thread() {
+
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(500);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                disco.setTextColor(randColor());
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
     }
 
     //button.getText().toString() compare this to color called below

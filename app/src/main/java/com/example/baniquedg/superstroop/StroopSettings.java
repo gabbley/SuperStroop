@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class StroopSettings extends AppCompatActivity {
 
@@ -16,11 +19,12 @@ public class StroopSettings extends AppCompatActivity {
 
         //at 4 colors by default, always visible
         createEasyButtons();
-
+        /*TextView title = (TextView) findViewById(R.id.)
+discoTitle();*/
 
         //if "hard" mode is chosen, makes extra buttons visible
-       CheckBox eightColors = (CheckBox) findViewById(R.id.chkEightColors);
-        if (eightColors.isChecked()){
+        CheckBox eightColors = (CheckBox) findViewById(R.id.chkEightColors);
+        if (eightColors.isChecked()) {
             createHardButtons();
         }
     }
@@ -34,7 +38,7 @@ public class StroopSettings extends AppCompatActivity {
     }
 
     //creates the "hard" buttons, makes visible
-    public void createHardButtons(){
+    public void createHardButtons() {
         GridLayout hardGrid = (GridLayout) findViewById(R.id.hardButtonsGrid);
         hardGrid.setVisibility(View.VISIBLE);
         Button purple = (Button) findViewById(R.id.btnPurple);
@@ -42,4 +46,31 @@ public class StroopSettings extends AppCompatActivity {
         Button black = (Button) findViewById(R.id.btnBlack);
         Button orange = (Button) findViewById(R.id.btnOrange);
     }
+
 }
+
+
+   /* public void discoTitle(final TextView disco){
+        Thread t = new Thread() {
+
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(500);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                disco.setTextColor(randColor());
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
+    }
+}*/
