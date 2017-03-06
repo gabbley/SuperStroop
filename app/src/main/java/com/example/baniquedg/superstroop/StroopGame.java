@@ -32,7 +32,8 @@ public class StroopGame extends AppCompatActivity {
 
     public void setStroop(View view){
         stroopWordColor(); //identifies current mainWord color
-        whichButtonClicked(view); //identifies which button is chosen
+        //whichButtonClicked(view); //identifies which button is chosen
+        colorNameArray(); //sets Stroop Compare
         if (stroopGuess.equals(stroopCompare)) { //compares the two answers
             scoreUpdate(); //updates score accordingly
         }
@@ -93,7 +94,7 @@ public class StroopGame extends AppCompatActivity {
     }
 
 
-    public void whichButtonClicked(View view) {
+    /*public void whichButtonClicked(View view) {
             switch (view.getId()) {
                 case R.id.btnYellow: stroopCompare = "yellow";
                     break;
@@ -114,12 +115,17 @@ public class StroopGame extends AppCompatActivity {
                 default: stroopCompare = "no color";
             }
         }
+*/
+    public void colorNameArray(){
 
-    public String[] colorNameArray(){
 
         String[] colorNames = new String[] {"yellow", "green", "blue", "orange",
                 "red", "purple", "pink", "black"};
-        return colorNames;
+
+      stroopCompare = colorNames[(int)(Math.random()*colorNames.length)];
+
+
+
     }
 
     public void checkErr(){
@@ -132,7 +138,8 @@ public class StroopGame extends AppCompatActivity {
         score++;
         viewScore();
         mainWord.setTextColor(randColor());
-        mainWord.setText("hahaha"); //override the method?
+        colorNameArray();
+        mainWord.setText(stroopCompare); //override the method?
 
     }
 
