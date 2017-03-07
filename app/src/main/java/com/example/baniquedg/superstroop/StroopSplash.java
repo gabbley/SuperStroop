@@ -1,5 +1,6 @@
 package com.example.baniquedg.superstroop;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,12 +8,44 @@ import android.widget.TextView;
 
 public class StroopSplash extends AppCompatActivity {
 
+    private Class game;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stroop_splash);
+        game = StroopGame.class;
+        Intent intent = new Intent(this, game);
+        startActivity(intent);
+
     }
 
+   /* public void splashDelay(){
+        Thread t = new Thread() {
+
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(5000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                               Intent intent = new Intent( this, game);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
+
+    }
+*/
 
   /*  public void discoTitle(final TextView disco){
         Thread t = new Thread() {

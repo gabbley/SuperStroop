@@ -48,29 +48,3 @@ discoTitle();*/
     }
 
 }
-
-
-   /* public void discoTitle(final TextView disco){
-        Thread t = new Thread() {
-
-
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(500);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                disco.setTextColor(randColor());
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
-                }
-            }
-        };
-
-        t.start();
-    }
-}*/
