@@ -80,6 +80,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.21"
                 android:text="0:00" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -174,17 +179,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/btnReset"
-            android:layout_width="match_parent"
+            android:layout_width="178dp"
             android:layout_height="38dp"
             android:layout_column="0"
             android:layout_row="1"
+            android:background="@android:color/white"
             android:onClick="resetScore"
             android:text="Reset" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="178dp"
+            android:layout_height="38dp"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:background="@android:color/white"
+            android:onClick="settingsScreen"
+            android:text="Settings" />
     </GridLayout>
 
 </RelativeLayout>

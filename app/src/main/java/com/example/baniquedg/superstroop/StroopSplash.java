@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class StroopSplash extends AppCompatActivity {
 
     private Class game;
+    public int[] colorArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,34 +21,7 @@ public class StroopSplash extends AppCompatActivity {
 
     }
 
-   /* public void splashDelay(){
-        Thread t = new Thread() {
-
-
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(5000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                               Intent intent = new Intent( this, game);
-                                startActivity(intent);
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
-                }
-            }
-        };
-
-        t.start();
-
-    }
-*/
-
-  /*  public void discoTitle(final TextView disco){
+    public void discoTitle(final TextView disco){
         Thread t = new Thread() {
 
 
@@ -77,7 +51,8 @@ public class StroopSplash extends AppCompatActivity {
         colorArray = new int[] {Color.YELLOW, Color.GREEN,
                 Color.RED, Color.BLUE, Color.MAGENTA, Color.BLACK};
 
-        return colorArray[(int)(Math.random() * colorArray.length) ]; //error, thinks length is zero
-    }*/
+        return colorArray[(int)(Math.random() * colorArray.length) ];
+    }
+
 
 }

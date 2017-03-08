@@ -1,5 +1,6 @@
 package com.example.baniquedg.superstroop;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,15 @@ import org.w3c.dom.Text;
 
 public class StroopSettings extends AppCompatActivity {
 
+    public CheckBox soundOn;
+    public CheckBox soundOff;
+    public CheckBox zen;
+    public CheckBox timed;
+    public CheckBox easy;
+    public CheckBox hard;
+    public static int[] colorArray;
+    public int currentlyChecked;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,14 +29,53 @@ public class StroopSettings extends AppCompatActivity {
 
         //at 4 colors by default, always visible
         createEasyButtons();
-        /*TextView title = (TextView) findViewById(R.id.)
-discoTitle();*/
+        TextView settingsTitle = (TextView) findViewById(R.id.lblStartTitle);
+        discoTitle(settingsTitle);
+        createChks();
 
         //if "hard" mode is chosen, makes extra buttons visible
         CheckBox eightColors = (CheckBox) findViewById(R.id.chkEightColors);
         if (eightColors.isChecked()) {
             createHardButtons();
         }
+    }
+
+    public void createChks(){
+        soundOn =  (CheckBox) findViewById(R.id.chkSoundOn);
+        soundOff = (CheckBox) findViewById(R.id.chkSoundOff);
+        zen = (CheckBox) findViewById(R.id.chkZenMode);
+        timed = (CheckBox) findViewById(R.id.chkTimedMode);
+        easy = (CheckBox) findViewById(R.id.chkFourColors);
+        hard = (CheckBox) findViewById(R.id.chkEightColors);
+    }
+
+    public void onCheck(View view){
+       if (view.getId() == R.id.chkSoundOn){
+            soundOff.isChecked();
+        }
+        else if (view.getId() == R.id.chkSoundOff){
+           soundOn.isChecked();
+       }
+
+        if (view.getId() == R.id.chkZenMode){
+            timed.isChecked();
+        }
+        else if (view.getId() == R.id.chkTimedMode){
+            zen.isChecked();
+        }
+
+        if (view.getId() == R.id.chkFourColors){
+            hard.isChecked();
+        }
+        else if (view.getId() == R.id.chkEightColors){
+            easy.isChecked();
+        }
+
+
+    }
+
+    public void uncheck(CheckBox chk){
+
     }
 
     //creates 4 easy buttons
@@ -46,5 +95,39 @@ discoTitle();*/
         Button black = (Button) findViewById(R.id.btnBlack);
         Button orange = (Button) findViewById(R.id.btnOrange);
     }
+
+    public void discoTitle(final TextView disco){
+        Thread t = new Thread() {
+
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(500);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                disco.setTextColor(randColor());
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
+    }
+
+    //returns a random color to set word to
+    public int randColor(){
+
+        colorArray = new int[] {Color.YELLOW, Color.GREEN,
+                Color.RED, Color.BLUE, Color.MAGENTA, Color.BLACK};
+
+        return colorArray[(int)(Math.random() * colorArray.length) ];
+    }
+
 
 }

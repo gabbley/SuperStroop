@@ -1,5 +1,6 @@
 package com.example.baniquedg.superstroop;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,7 +51,8 @@ public class StroopGame extends AppCompatActivity {
     public int randColor(){
 
         colorArray = new int[] {Color.YELLOW, Color.GREEN,
-                Color.RED, Color.BLUE, Color.MAGENTA, Color.BLACK};
+                Color.RED, Color.BLUE, Color.MAGENTA, Color.BLACK,
+                Color.CYAN, Color.WHITE};
 
         return colorArray[(int)(Math.random() * colorArray.length) ]; //error, thinks length is zero
     }
@@ -122,6 +124,12 @@ public class StroopGame extends AppCompatActivity {
                 break;
             default : stroopGuess = "no color";
         }
+    }
+
+    public void settingsScreen(View view){
+        Class settings = StroopSettings.class;
+        Intent intent = new Intent(this, settings);
+        startActivity(intent);
     }
 
 
