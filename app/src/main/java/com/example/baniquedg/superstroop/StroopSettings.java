@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -31,48 +32,14 @@ public class StroopSettings extends AppCompatActivity {
         createEasyButtons();
         TextView settingsTitle = (TextView) findViewById(R.id.lblStartTitle);
         discoTitle(settingsTitle);
-        createChks();
 
         //if "hard" mode is chosen, makes extra buttons visible
-        CheckBox eightColors = (CheckBox) findViewById(R.id.chkEightColors);
+        RadioButton eightColors = (RadioButton) findViewById(R.id.rbnHard);
         if (eightColors.isChecked()) {
             createHardButtons();
         }
     }
 
-    public void createChks(){
-        soundOn =  (CheckBox) findViewById(R.id.chkSoundOn);
-        soundOff = (CheckBox) findViewById(R.id.chkSoundOff);
-        zen = (CheckBox) findViewById(R.id.chkZenMode);
-        timed = (CheckBox) findViewById(R.id.chkTimedMode);
-        easy = (CheckBox) findViewById(R.id.chkFourColors);
-        hard = (CheckBox) findViewById(R.id.chkEightColors);
-    }
-
-    public void onCheck(View view){
-       if (soundOn.isChecked()){
-            soundOff.setChecked(false);
-        }
-        if (soundOff.isChecked()){
-           soundOn.setChecked(false);
-       }
-
-        if (zen.isChecked()){
-            timed.setChecked(false);
-        }
-        if (timed.isChecked()){
-            zen.setChecked(false);
-        }
-
-        if (easy.isChecked()){
-            hard.setChecked(false);
-        }
-        if (hard.isChecked()){
-            easy.setChecked(false);
-        }
-
-
-    }
 
 
     //creates 4 easy buttons

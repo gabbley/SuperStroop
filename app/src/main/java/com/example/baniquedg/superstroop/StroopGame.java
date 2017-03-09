@@ -35,6 +35,9 @@ public class StroopGame extends AppCompatActivity {
        // checkErr(); //checks if the colors are not working
         TextView gameTitle = (TextView) findViewById(R.id.lblTitle);
         discoTitle(gameTitle);
+        programmerInfo();
+
+
 
     }
 
@@ -191,5 +194,10 @@ public class StroopGame extends AppCompatActivity {
         score = -1;
         scoreUpdate();
 
+    }
+
+    public void programmerInfo(){
+
+        Log.i("tag", "Programmed by: Gabby Baniqued");
     }
 }

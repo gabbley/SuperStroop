@@ -16,7 +16,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/lblStartTitle"
@@ -42,95 +43,108 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.18">
 
             <TextView
-                android:text="Sound on?"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView"
                 android:layout_weight="1"
+                android:text="Sound on?"
                 android:textSize="18sp"
                 android:textStyle="normal|bold" />
 
-            <CheckBox
-                android:id="@+id/chkSoundOn"
-                android:layout_width="64dp"
-                android:layout_height="wrap_content"
-                android:onClick="onCheck"
-                android:text="On" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
-            <CheckBox
-                android:id="@+id/chkSoundOff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onCheck"
-                android:text="Off" />
+                <RadioButton
+                    android:id="@+id/rbnSoundOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="On" />
+
+                <RadioButton
+                    android:id="@+id/rbnSoundOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Off" />
+            </RadioGroup>
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17">
 
             <TextView
-                android:text="Mode?"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/textView3"
-                android:layout_weight="1"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:text="Mode?"
                 android:textSize="18sp"
                 android:textStyle="normal|bold" />
 
-            <CheckBox
-                android:id="@+id/chkZenMode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onCheck"
-                android:text="Zen Mode" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
-            <CheckBox
-                android:id="@+id/chkTimedMode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onCheck"
-                android:text="Timed Mode" />
+                <RadioButton
+                    android:id="@+id/rbnZen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Zen Mode" />
+
+                <RadioButton
+                    android:id="@+id/rbnTimed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RadioButton" />
+
+            </RadioGroup>
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23">
 
             <TextView
                 android:text="How Many Colors?"
-                android:layout_width="wrap_content"
+                android:layout_width="84dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
-                android:layout_weight="1"
                 android:textStyle="normal|bold"
                 android:textSize="18sp" />
 
-            <CheckBox
-                android:id="@+id/chkFourColors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onCheck"
-                android:text="4" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
-            <CheckBox
-                android:id="@+id/chkEightColors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onCheck"
-                android:text="8" />
+                <RadioButton
+                    android:id="@+id/rbnEasy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="57dp"
+                    android:text="4" />
+
+                <RadioButton
+                    android:id="@+id/rbnHard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:text="8" />
+            </RadioGroup>
 
         </LinearLayout>
 
