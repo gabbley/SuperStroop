@@ -50,33 +50,30 @@ public class StroopSettings extends AppCompatActivity {
     }
 
     public void onCheck(View view){
-       if (view.getId() == R.id.chkSoundOn){
-            soundOff.isChecked();
+       if (soundOn.isChecked()){
+            soundOff.setChecked(false);
         }
-        else if (view.getId() == R.id.chkSoundOff){
-           soundOn.isChecked();
+        if (soundOff.isChecked()){
+           soundOn.setChecked(false);
        }
 
-        if (view.getId() == R.id.chkZenMode){
-            timed.isChecked();
+        if (zen.isChecked()){
+            timed.setChecked(false);
         }
-        else if (view.getId() == R.id.chkTimedMode){
-            zen.isChecked();
+        if (timed.isChecked()){
+            zen.setChecked(false);
         }
 
-        if (view.getId() == R.id.chkFourColors){
-            hard.isChecked();
+        if (easy.isChecked()){
+            hard.setChecked(false);
         }
-        else if (view.getId() == R.id.chkEightColors){
-            easy.isChecked();
+        if (hard.isChecked()){
+            easy.setChecked(false);
         }
 
 
     }
 
-    public void uncheck(CheckBox chk){
-
-    }
 
     //creates 4 easy buttons
     public void createEasyButtons() {

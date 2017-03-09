@@ -54,18 +54,19 @@
                 android:textStyle="normal|bold" />
 
             <CheckBox
-                android:text="On"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/chkSoundOn"
-                android:layout_weight="1" />
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:onClick="onCheck"
+                android:text="On" />
 
             <CheckBox
-                android:text="Off"
+                android:id="@+id/chkSoundOff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chkSoundOff"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="onCheck"
+                android:text="Off" />
 
         </LinearLayout>
 
@@ -84,18 +85,20 @@
                 android:textStyle="normal|bold" />
 
             <CheckBox
-                android:text="Zen Mode"
+                android:id="@+id/chkZenMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chkZenMode"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="onCheck"
+                android:text="Zen Mode" />
 
             <CheckBox
-                android:text="Timed Mode"
+                android:id="@+id/chkTimedMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chkTimedMode"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="onCheck"
+                android:text="Timed Mode" />
 
         </LinearLayout>
 
@@ -114,18 +117,20 @@
                 android:textSize="18sp" />
 
             <CheckBox
-                android:text="4"
+                android:id="@+id/chkFourColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chkFourColors"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="onCheck"
+                android:text="4" />
 
             <CheckBox
-                android:text="8"
+                android:id="@+id/chkEightColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chkEightColors"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="onCheck"
+                android:text="8" />
 
         </LinearLayout>
 
