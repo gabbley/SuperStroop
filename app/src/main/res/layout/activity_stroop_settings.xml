@@ -14,10 +14,10 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1">
+        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/lblStartTitle"
@@ -34,11 +34,20 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SETTINGS"
+            android:text="HOW TO PLAY/SETTINGS"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="30sp"
             android:textStyle="normal|bold" />
+
+        <EditText
+            android:id="@+id/txtInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="Instructions: While playing Super Strooper, you must use the buttons provided on the game screen to name what the word reads and not the color. The stroop effect describes the brain's tendency to register the color of the word rather than what it actually reads. Test your skills and see if you've got what it takes!"
+            android:layout_weight="0.28" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -135,15 +144,16 @@
 
                 <RadioButton
                     android:id="@+id/rbnEasy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="57dp"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
                     android:text="4" />
 
                 <RadioButton
                     android:id="@+id/rbnHard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="8" />
+
             </RadioGroup>
 
         </LinearLayout>

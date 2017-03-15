@@ -38,6 +38,8 @@ public class StroopSettings extends AppCompatActivity {
         if (eightColors.isChecked()) {
             createHardButtons();
         }
+
+
     }
 
 
