@@ -3,9 +3,11 @@ package com.example.baniquedg.superstroop;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -38,6 +40,7 @@ public class StroopSettings extends AppCompatActivity {
         if (eightColors.isChecked()) {
             createHardButtons();
         }
+
 
 
     }

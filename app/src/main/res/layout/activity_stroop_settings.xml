@@ -40,14 +40,12 @@
             android:textSize="30sp"
             android:textStyle="normal|bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtInstructions"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
+            android:layout_height="wrap_content"
             android:text="Instructions: While playing Super Strooper, you must use the buttons provided on the game screen to name what the word reads and not the color. The stroop effect describes the brain's tendency to register the color of the word rather than what it actually reads. Test your skills and see if you've got what it takes!"
-            android:layout_weight="0.28" />
+            android:textSize="18sp" />
 
         <LinearLayout
             android:orientation="horizontal"
