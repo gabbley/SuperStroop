@@ -156,5 +156,12 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnFriends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="friends"
+            android:text="FRIENDS THEME SONG" />
+
     </LinearLayout>
 </RelativeLayout>

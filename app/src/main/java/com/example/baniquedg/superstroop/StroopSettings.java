@@ -1,6 +1,7 @@
 package com.example.baniquedg.superstroop;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -38,6 +39,8 @@ public class StroopSettings extends AppCompatActivity {
         //if "hard" mode is chosen, makes extra buttons visible
         RadioButton eightColors = (RadioButton) findViewById(R.id.rbnHard);
         if (eightColors.isChecked()) {
+            MediaPlayer click = MediaPlayer.create(this, R.raw.click);
+            click.start();
             createHardButtons();
         }
 
@@ -45,7 +48,10 @@ public class StroopSettings extends AppCompatActivity {
 
     }
 
-
+    public void friends(View view){
+        MediaPlayer friends = MediaPlayer.create(this, R.raw.friends);
+        friends.start();
+    }
 
     //creates 4 easy buttons
     public void createEasyButtons() {

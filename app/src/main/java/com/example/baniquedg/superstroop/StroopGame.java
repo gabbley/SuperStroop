@@ -2,6 +2,7 @@ package com.example.baniquedg.superstroop;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,9 +37,6 @@ public class StroopGame extends AppCompatActivity {
         TextView gameTitle = (TextView) findViewById(R.id.lblTitle);
         discoTitle(gameTitle);
         programmerInfo();
-
-
-
     }
 
     public void setStroop(View view){
@@ -48,6 +46,8 @@ public class StroopGame extends AppCompatActivity {
         if (stroopWord.equals(stroopCompare)) { //compares the two answers
             scoreUpdate(); //updates score accordingly
         }
+        MediaPlayer click = MediaPlayer.create(this, R.raw.click);
+        click.start();
     }
 
     //returns a random color to set word to
@@ -175,11 +175,7 @@ public class StroopGame extends AppCompatActivity {
 
         return colorNames[(int)(Math.random()*colorNames.length)];
     }
-    public void checkErr(){
-        if (stroopCompare.equals("no color") || stroopGuess.equals("no color")){
-            //error message in dialog box
-        }
-    }
+
 
     public void scoreUpdate(){
         score++;
@@ -188,12 +184,14 @@ public class StroopGame extends AppCompatActivity {
         colorNameArray();
         mainWord.setText(stroopWord); //override the method?
 
+
     }
 
     public void resetScore(View view){
         score = -1;
         scoreUpdate();
-
+        MediaPlayer reset = MediaPlayer.create(this, R.raw.reset);
+        reset.start();
     }
 
     public void programmerInfo(){
