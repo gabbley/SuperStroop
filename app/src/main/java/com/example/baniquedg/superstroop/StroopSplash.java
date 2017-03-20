@@ -21,6 +21,7 @@ public class StroopSplash extends AppCompatActivity {
 
     }
 
+    //randomly changes text view color every .5 second
     public void discoTitle(final TextView disco){
         Thread t = new Thread() {
 

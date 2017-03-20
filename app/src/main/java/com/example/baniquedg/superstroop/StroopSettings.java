@@ -17,60 +17,26 @@ import org.w3c.dom.Text;
 
 public class StroopSettings extends AppCompatActivity {
 
-    public CheckBox soundOn;
-    public CheckBox soundOff;
-    public CheckBox zen;
-    public CheckBox timed;
-    public CheckBox easy;
-    public CheckBox hard;
     public static int[] colorArray;
-    public int currentlyChecked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stroop_settings);
 
-        //at 4 colors by default, always visible
-        createEasyButtons();
         TextView settingsTitle = (TextView) findViewById(R.id.lblStartTitle);
-        discoTitle(settingsTitle);
+        discoTitle(settingsTitle); //color effect on settings title
 
-        //if "hard" mode is chosen, makes extra buttons visible
-        RadioButton eightColors = (RadioButton) findViewById(R.id.rbnHard);
-        if (eightColors.isChecked()) {
-            MediaPlayer click = MediaPlayer.create(this, R.raw.click);
-            click.start();
-            createHardButtons();
-        }
-
-
-
+        
     }
 
+    //plays friends theme song
     public void friends(View view){
         MediaPlayer friends = MediaPlayer.create(this, R.raw.friends);
         friends.start();
     }
 
-    //creates 4 easy buttons
-    public void createEasyButtons() {
-        Button yellow = (Button) findViewById(R.id.btnYellow);
-        Button blue = (Button) findViewById(R.id.btnBlue);
-        Button green = (Button) findViewById(R.id.btnGreen);
-        Button red = (Button) findViewById(R.id.btnRed);
-    }
-
-    //creates the "hard" buttons, makes visible
-    public void createHardButtons() {
-        GridLayout hardGrid = (GridLayout) findViewById(R.id.hardButtonsGrid);
-        hardGrid.setVisibility(View.VISIBLE);
-        Button purple = (Button) findViewById(R.id.btnPurple);
-        Button pink = (Button) findViewById(R.id.btnPink);
-        Button black = (Button) findViewById(R.id.btnBlack);
-        Button orange = (Button) findViewById(R.id.btnOrange);
-    }
-
+    //randomly changes text view color every .5 second
     public void discoTitle(final TextView disco){
         Thread t = new Thread() {
 
@@ -95,7 +61,7 @@ public class StroopSettings extends AppCompatActivity {
         t.start();
     }
 
-    //returns a random color to set word to
+    //returns a random color
     public int randColor(){
 
         colorArray = new int[] {Color.YELLOW, Color.GREEN,
